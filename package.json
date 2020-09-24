@@ -1,0 +1,24 @@
+{
+  "name": "musicoftheday",
+  "version": "1.0.0",
+  "description": "discord bot for managing dailydj",
+  "main": "index.js",
+  "dependencies": {
+    "discord": "^0.8.2",
+    "discord.js": "^12.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/peeksake/DiscordDailyDJ.git"
+  },
+  "author": "peeksake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peeksake/DiscordDailyDJ/issues"
+  },
+  "homepage": "https://github.com/peeksake/DiscordDailyDJ#readme"
+}
