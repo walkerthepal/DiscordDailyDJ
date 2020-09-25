@@ -9,6 +9,8 @@ Node JS discord bot that pings catalogues which person is the daily dj
     
 * schedule: prints out the next few days of the schedule
 
+* uptime: prints how long in days the service has been active
+
 ## Admin commands
  
 * purge: unenrolls all users in the schedule and resets the schedule
