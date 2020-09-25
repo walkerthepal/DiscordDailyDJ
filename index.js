@@ -9,6 +9,7 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 
 startDate=new Date();
 userScheduleList=[]
+time="09:00:00"
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
