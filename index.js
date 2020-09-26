@@ -7,9 +7,9 @@ client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-startDate=new Date();
-userScheduleList=[]
-time="09:00:00"
+startDate = new Date();
+userScheduleList = []
+time = "09:00:00"
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);

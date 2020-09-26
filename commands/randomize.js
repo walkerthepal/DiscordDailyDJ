@@ -2,7 +2,7 @@ module.exports = {
 	name: 'randomize',
 	description: 'randomize users in the schedule',
 	execute(message, args) {
-		if(message.guild.ownerID === message.author.id){
+		if (message.guild.ownerID === message.author.id) {
 			//code here
 			//randomize users in UserScheduleList
 			//array of users who have !enrolled
