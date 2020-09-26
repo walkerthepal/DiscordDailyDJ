@@ -7,7 +7,7 @@ module.exports = {
 			var userDate = new Date(+currentDate);
 			userDate.setDate(currentDate.getDate() + index);
 			const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-			message.channel.send(`${userScheduleList[index].username}'s turn on ${userDate.toLocaleDateString("en", options)}`);
+			message.channel.send(userScheduleList[index].username + `s turn on ${userDate.toLocaleDateString("en", options)}`);
 		}
 	},
 };

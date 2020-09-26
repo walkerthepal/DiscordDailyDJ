@@ -4,6 +4,7 @@
   "description": "discord bot for managing dailydj",
   "main": "index.js",
   "dependencies": {
+    "cron": "^1.8.2",
     "discord": "^0.8.2",
     "discord.js": "^12.3.1",
     "node": "^14.12.0"
