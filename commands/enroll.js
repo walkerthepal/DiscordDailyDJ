@@ -6,6 +6,7 @@ module.exports = {
 	execute(message, args) {
 		if (userScheduleList.indexOf(message.author) === -1) {
 			userScheduleList.push(message.author);
+			//TODO: ADD USER TO FILE
 			message.channel.send(`Enrolled <@${message.author.id}>`);
 		}
 	},

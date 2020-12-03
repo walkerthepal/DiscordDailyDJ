@@ -15,7 +15,7 @@ Node JS discord bot that pings catalogues which person is the daily dj
  
 * purge: unenrolls all users in the schedule and resets the schedule
 
-* settime \<time> : sets the time the user is pinged for song the day
+* timeset \<time> : sets the time the user is pinged for song the day. Format xx.xx.x (min/hr/weekday)
 
 * randomize: randomizes users in the schedule
 

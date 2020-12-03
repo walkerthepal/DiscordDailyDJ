@@ -1,43 +1,29 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');
-const cron = require('cron');
+
+const helper = require('./helper/helper.js')
+
+const spotifyHelper = require('./helper/spotifyhelper.js')
+
+const { prefix, discordToken, spotifyToken, spotifyClientID, spotifyClientSecret, spotifyWeeklyPlaylistID , spotifyArchivePlaylistID
+} = require('./config.json');
+
 const { time } = require('console');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-const musicChannelID='702660803781722234';
+
 //for Testing
-//const botChannelID='758890673024925806';
+const botChannelID='758890673024925806';
+musicChannelID = botChannelID;
 
 startDate = new Date();
+//TODO: MAKE USERSCHEDULELIST A FILE AND READ IT SO YOU DON'T HAVE TO DO IT YET
 userScheduleList = []
-markerTime = "11:11"
+markerTime = "11:11:1"
 newTime = markerTime
-
-//looks at time and sets new cron job to that specifically
-function setCronJob(){
-	var [hour,minute] = newTime.split(":");
-	scheduledJob = new cron.CronJob(`${minute} ${hour} * * *`, sendPing);
-	scheduledJob.start();
-	markerTime=newTime;
-}
-
-function sendPing(){
-	//pings user in the music channel asking for music
-	client.channels.cache.get(musicChannelID).send(`${userScheduleList[0]} please post your song and topic choice.`);
-	//pushes user to back of array
-	userScheduleList.push(userScheduleList[0]);
-	//removes them of front of array
-	userScheduleList.shift();
-	//if there is a new time then it resets the cronjob the next day
-	if(newTime!==markerTime){
-		scheduledJob.stop();
-		setCronJob();
-	}
-}
 
 //allows all these files to be called later
 for (const file of commandFiles) {
@@ -47,7 +33,6 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
 	console.log(`Started at ${startDate}`);
-	setCronJob();
 });
 
 client.on('message', message => {
@@ -66,4 +51,5 @@ client.on('message', message => {
 	}
 });
 
-client.login(token);
+client.login(discordToken);
+//TODO:Do you have to run spotify.login ??
